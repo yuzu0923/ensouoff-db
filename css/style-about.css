@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-divider {
+  margin: 20px 0;
+  border: none;
+  border-radius: 10px;
+  border-top: 5px solid #30764F; /* 太線 */
+}
+
+.about-message {
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1.05em;
+}
+
+/* プロフィールの囲い */
+.profile-box {
+  display: flex;
+  gap: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+/* 似顔絵部分の仮スタイル */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  background-color: #eee;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+/* テキスト部分 */
+.profile-text {
+  flex: 1;
+  line-height: 1.7;
+}
+
+/* 戻るボタン */
+.back-button-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #30764F;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+/* スマホ対応（横並び→縦並びへ） */
+@media (max-width: 768px) {
+  .profile-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin: 0 auto;
+  }
+}

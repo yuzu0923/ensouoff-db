@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+body {
+  max-width: 900px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px 40px;
+  border: 4px solid #30764F;
+  border-radius: 10px;
+  background-color: #F5F3EE;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  /* もしテキストがはみ出したら隠す */
+}
+
+/* ↓↓↓↓↓スマホ画面レイアウト↓↓↓↓↓ */
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+    padding: 10px 20px;
+    border: none;
+    /* 枠線を消す */
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .header {
+    flex-direction: column;
+    /* ボタンを縦並びにする */
+    text-align: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    /* ボタンを縦並びにする */
+    gap: 0.8em;
+  }
+
+  /* ▲該当箇所が見つからないため、不要であれば削除 */
+  .nav-btn {
+    width: 100%;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 8px 0;
+  }
+
+  /* 新着情報の２つのカード */
+  .article-card {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  p,
+  span,
+  a,
+  button {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    white-space: normal;
+  }
+}
+
+/* ↑↑↑↑↑スマホ画面レイアウトここまで↑↑↑↑↑ */
+
+/* サイト名周辺装飾 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* 最初のアイテムは主軸の先頭側、最後のアイテムは主軸の末尾側 */
+  align-items: center;
+  background: #30764F;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.3em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ロゴ画像 */
+.logo {
+  height: 57.25px;
+  /* 縦横比を固定するためheightのみ設定 */
+  image-rendering: auto;
+  /* 自動調整 */
+  flex-shrink: 0;
+  /* 圧縮されない */
+}
+
+/* タイトル */
+.header h1 {
+  flex: 1;
+  font-size: 2.0em;
+  text-align: center;
+  margin: 0;
+}
+
+/* ヘッダーのメニューボタン */
+.menu {
+  background-color: #4FA77A;
+  /* ヘッダーの緑に合う少し明るめのトーン */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4em 0.8em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  /* 改行防止 */
+}
+
+/* ヘッダーのメニューボタン（ホバー時） */
+.menu:hover {
+  background-color: #63BE8E;
+}
+
+/* 小見出し */
+h2 {
+  padding: 0.4em 0.5em;
+  color: #333;
+  background: #eee;
+  border-bottom: solid 3px #d7d7d7;
+  margin-top: 35px;
+}
+
+/* メインメニューの４つのボタン（全体） */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  /* 折り返し許可 */
+  justify-content: space-between;
+  gap: 1em;
+  margin: 1.5em 0;
+  max-width: 700px;
+  margin-inline: auto;
+  background: #F5F3EE;
+  color: #30764F;
+}
+
+/* メインメニューの４つのボタン（個別） */
+.buttons a button {
+  background: #30764F;
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.2em;
+  font-size: 1em;
+  border-radius: 999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* メインメニューの４つのボタン（個別・ホバー時） */
+.buttons a button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* メインメニューの４つのボタン（追加） */
+.btn {
+  flex: 1;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: #30764F;
+  color: #fff;
+  padding: 0.75em;
+  text-decoration: none;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+/* メインメニューの４つのボタン（個別・ホバー時） */
+.btn:hover {
+  background-color: #4FA77A;
+  border: #30764F;
+}
+
+/* 小見出しの文字 */
+.mainMenu h2,
+.news h2,
+.articles h2,
+.sitemap h2 {
+  font-size: 1.4em;
+  padding-left: 0.5em;
+  border-left: 5px solid #2e7d6f;
+  margin-bottom: 0.5em;
+  color: #2e7d6f;
+}
+
+/* 新着情報 */
+article {
+  margin-top: 0.1em;
+}
+
+/* 新着情報のカード表示（全体） */
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* frはfraction（分数）の略で、利用可能なスペースの割合を示すための単位。 */
+  gap: 1em;
+  margin-top: 1em;
+}
+
+/* 新着情報のカード（個別） */
+.article-card {
+  position: relative;
+  display: block;
+  background: white;
+  padding: 1em;
+  padding-bottom: 2em;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.article-card h3 {
+  font-size: 1.2em;
+  margin-top: -0.1em;
+  margin-bottom: 0.5em;
+  color: #2e7d6f
+}
+
+.article-card p {
+  margin: 0.3em 0;
+  color: #333;
+}
+
+.article-card small {
+  position: absolute;
+  bottom: 0.5em;
+  left: 1em;
+  font-size: 0.8em;
+  color: #777;
+}
+
+
+/* ↓↓↓↓↓新着情報（NEWS）用CSS（news.php）↓↓↓↓↓ */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  /* 積み重なるように配置する */
+  gap: 2em;
+  margin-top: 1.5em;
+}
+
+.news {
+  margin-top: 2em;
+  background-color: #F5F3EE;
+  /* padding: 1em 1.5em; */
+  border-radius: 8px;
+  /* 枠線を削除 */
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list li {
+  margin-top: 0.5em;
+}
+
+.news-list a {
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-left: 1.5em;
+}
+
+.news-list a:hover {
+  color: #30764F;
+  text-decoration: underline;
+}
+
+.more-news {
+  text-align: right;
+  margin-top: 1em;
+}
+
+.more-news a {
+  color: #30764F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.more-news a:hover {
+  text-decoration: underline;
+}
+
+
+.news p {
+  text-indent: 2.0em;
+}
+
+.index-footer {
+  text-align: right;
+}
+
+.news-contents h2 {
+  margin-left: 1.2em;
+  margin-top: 3.0em;
+}
+
+.news-contents p {
+  margin-left: 3.0em;
+}
+
+.news-contents li {
+  margin-left: 4.0em;
+}
+
+.go-top {
+  display: inline-block;
+  background-color: #30764F;
+  color: #fff;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.news-footer {
+  text-align: center;
+  padding: 2em 0;
+}
