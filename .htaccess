@@ -1,5 +1,0 @@
-AuthUserFile /home/users/0/upper.jp-ensouoff-db/web/.htpasswd
-AuthGroupFile /dev/null
-AuthName "閲覧するにはID・パスワードが必要です。"
-AuthType Basic
-require valid-user

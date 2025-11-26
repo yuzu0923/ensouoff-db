@@ -14,8 +14,7 @@ body {
 
 html,
 body {
-  overflow-x: hidden;
-  /* もしテキストがはみ出したら隠す */
+  overflow-x: hidden; /* もしテキストがはみ出したら隠す */
 }
 
 /* ↓↓↓↓↓スマホ画面レイアウト↓↓↓↓↓ */
@@ -88,12 +87,9 @@ body {
 
 /* ロゴ画像 */
 .logo {
-  height: 57.25px;
-  /* 縦横比を固定するためheightのみ設定 */
-  image-rendering: auto;
-  /* 自動調整 */
-  flex-shrink: 0;
-  /* 圧縮されない */
+  height: 57.25px; /* 縦横比を固定するためheightのみ設定 */
+  image-rendering: auto; /* 自動調整 */
+  flex-shrink: 0; /* 圧縮されない */
 }
 
 /* タイトル */
@@ -107,7 +103,6 @@ body {
 /* ヘッダーのメニューボタン */
 .menu {
   background-color: #4FA77A;
-  /* ヘッダーの緑に合う少し明るめのトーン */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -116,8 +111,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  /* 改行防止 */
+  white-space: nowrap; /* 改行防止 */
 }
 
 /* ヘッダーのメニューボタン（ホバー時） */
@@ -137,8 +131,7 @@ h2 {
 /* メインメニューの４つのボタン（全体） */
 .buttons {
   display: flex;
-  flex-wrap: wrap;
-  /* 折り返し許可 */
+  flex-wrap: wrap; /* 折り返し許可 */
   justify-content: space-between;
   gap: 1em;
   margin: 1.5em 0;
@@ -258,8 +251,7 @@ article {
 /* ↓↓↓↓↓新着情報（NEWS）用CSS（news.php）↓↓↓↓↓ */
 .news-list {
   display: flex;
-  flex-direction: column;
-  /* 積み重なるように配置する */
+  flex-direction: column; /* 積み重なるように配置する */
   gap: 2em;
   margin-top: 1.5em;
 }
@@ -267,9 +259,7 @@ article {
 .news {
   margin-top: 2em;
   background-color: #F5F3EE;
-  /* padding: 1em 1.5em; */
   border-radius: 8px;
-  /* 枠線を削除 */
 }
 
 .news-list {
@@ -310,7 +300,6 @@ article {
 .more-news a:hover {
   text-decoration: underline;
 }
-
 
 .news p {
   text-indent: 2.0em;

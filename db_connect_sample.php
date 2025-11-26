@@ -1,7 +1,8 @@
 <?php
-$dsn = 'mysql:host=mysql80-2.lolipop.lan;dbname=LAA1689216-ensoudemo;charset=utf8mb4';
-$user = 'LAA1689216';
-$password = 'gnFDffbRS7gKWJQ';
+$dsn = 'mysql:host=xxxx;dbname=xxxx;charset=utf8mb4';
+$user = 'xxxx';
+$password = 'xxxx';
+// 公開用は情報を伏せています。
 // 【MySQL】接続先。【host=】データベースホスト名。【dbname=】データベース名。【charset=utf8mb4】文字コードをUTF-8に。
 
 try {

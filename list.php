@@ -89,7 +89,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="card-list">
       <?php foreach ($events as $event): ?>
         <?php
-        // もうすぐ締切判定（既存ロジックを再利用）
+        // もうすぐ締切判定
         $deadline = !empty($event['deadline']) ? new DateTime($event['deadline']) : null;
         $days_left = $deadline ? $today->diff($deadline)->days : null;
         $is_soon = $deadline && $deadline >= $today && $days_left <= 7;
@@ -97,7 +97,6 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="event-card">
 
           <h2 class="card-title"><?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?></h2>
-
           <p class="card-date">
             📅 <?= htmlspecialchars($event['event_date'], ENT_QUOTES, 'UTF-8') ?>
           </p>

@@ -70,21 +70,13 @@
     $japanese_day_event = $day_map[$english_day_event];
     $eventDate_display = $eventDate_obj->format("Y年n月j日（{$japanese_day_event}）");
 
-
-
-
-
-
     $time_start_hour = $_POST['time_start_hour'];
     $time_start_min = $_POST['time_start_min'];
     $time_finish_hour = $_POST['time_finish_hour'];
     $time_finish_min = $_POST['time_finish_min'];
     $time_note = $_POST['time_note'];
-
     $time_start = sprintf('%02d:%02d', $time_start_hour, $time_start_min);
     $time_finish = sprintf('%02d:%02d', $time_finish_hour, $time_finish_min);
-
-
     $genreSelect = $_POST['genreSelect'] ?? '';
 
     $genreLabels = [
@@ -95,17 +87,10 @@
 
     // 表示用ラベル（不明ならそのまま表示）
     $genreDisplay = $genreLabels[$genreSelect] ?? $genreSelect;
-
-
     ?>
 
 
-
-
-
-
     <h1>入力内容の確認</h1>
-
     <fieldset>
       <h2>１：基本情報</h2>
       <p>■演奏会タイトル：<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></p>
@@ -117,17 +102,14 @@
     <fieldset>
       <h2>２：演奏会の詳細</h2>
       <p>■開催日程：<?= htmlspecialchars($eventDate_display, ENT_QUOTES, 'UTF-8') ?></p>
-      <!-- ↑後でdeadlineと同じ処理をしておく！ -->
       <p>（※備考）：<?= htmlspecialchars($eventDateNote, ENT_QUOTES, 'UTF-8') ?></p>
       <p>■開催場所：<?= htmlspecialchars($eventPrefecture, ENT_QUOTES, 'UTF-8') ?></p>
       <p>■住所：<?= htmlspecialchars($location_note, ENT_QUOTES, 'UTF-8') ?><?= htmlspecialchars($location_note2, ENT_QUOTES, 'UTF-8') ?></p>
-
       <p>■開催時間</p>
       <p>・開始：<?= htmlspecialchars($time_start, ENT_QUOTES, 'UTF-8') ?></p>
       <p>・終了：<?= htmlspecialchars($time_finish, ENT_QUOTES, 'UTF-8') ?></p>
       <p>（※備考）：<?= htmlspecialchars($time_note, ENT_QUOTES, 'UTF-8') ?></p>
     </fieldset>
-
 
     <fieldset>
       <h2>３：イベントの詳細</h2>
@@ -166,7 +148,7 @@
           $count_key = $instrument . "_count";
           $count = isset($_POST[$count_key]) ? (int)$_POST[$count_key] : 0;
 
-          // instrument[] に選ばれた項目のうち、人数が1以上のものだけが表示されます。
+          // instrument[] に選ばれた項目のうち、人数が1以上のものだけが表示される。
           $count_key = $instrument . "_count";
           $count = isset($_POST[$count_key]) ? (int)$_POST[$count_key] : 0;
 
@@ -176,7 +158,7 @@
         }
         echo "</ul>";
       }
-      // ▼ ここから自由入力の処理 ▼
+      // ▼ 自由入力の処理 ▼
       if (!empty($_POST['other_instrument_name']) && (int)$_POST['other_instrument_count'] > 0) {
         $name = htmlspecialchars($_POST['other_instrument_name'], ENT_QUOTES, 'UTF-8');
         $count = (int)$_POST['other_instrument_count'];
@@ -184,10 +166,7 @@
         echo "<ul><li>{$name}：{$count}名</li></ul>";
       }
       ?>
-
     </fieldset>
-
-
 
 
     <!-- 「送信する」ボタンの処理 -->
@@ -202,29 +181,22 @@
       <input type="hidden" name="songTitle1" value="<?= htmlspecialchars($songTitle1, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer1" value="<?= htmlspecialchars($composer1, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo1" value="<?= htmlspecialchars($songMemo1, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="songTitle2" value="<?= htmlspecialchars($songTitle2, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer2" value="<?= htmlspecialchars($composer2, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo2" value="<?= htmlspecialchars($songMemo2, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="songTitle3" value="<?= htmlspecialchars($songTitle3, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer3" value="<?= htmlspecialchars($composer3, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo3" value="<?= htmlspecialchars($songMemo3, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="eventRegion" value="<?= htmlspecialchars($eventRegion, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="eventPrefecture" value="<?= htmlspecialchars($eventPrefecture, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="time_start_hour" value="<?= htmlspecialchars($time_start_hour, ENT_QUOTES) ?>">
       <input type="hidden" name="time_start_min" value="<?= htmlspecialchars($time_start_min, ENT_QUOTES) ?>">
       <input type="hidden" name="time_finish_hour" value="<?= htmlspecialchars($time_finish_hour, ENT_QUOTES) ?>">
       <input type="hidden" name="time_finish_min" value="<?= htmlspecialchars($time_finish_min, ENT_QUOTES) ?>">
       <input type="hidden" name="time_note" value="<?= htmlspecialchars($time_note, ENT_QUOTES) ?>">
-
       <input type="hidden" name="concept" value="<?= htmlspecialchars($concept, ENT_QUOTES) ?>">
       <input type="hidden" name="requirement_memo" value="<?= htmlspecialchars($requirement_memo, ENT_QUOTES) ?>">
-
       <input type="hidden" name="genreSelect" value="<?= htmlspecialchars($genreSelect, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="other_instrument_name" value="<?= htmlspecialchars($other_instrument_name ?? '', ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="other_instrument_count" value="<?= htmlspecialchars($_other_instrument_count ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
@@ -258,29 +230,22 @@
       <input type="hidden" name="songTitle1" value="<?= htmlspecialchars($songTitle1, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer1" value="<?= htmlspecialchars($composer1, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo1" value="<?= htmlspecialchars($songMemo1, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="songTitle2" value="<?= htmlspecialchars($songTitle2, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer2" value="<?= htmlspecialchars($composer2, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo2" value="<?= htmlspecialchars($songMemo2, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="songTitle3" value="<?= htmlspecialchars($songTitle3, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="composer3" value="<?= htmlspecialchars($composer3, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="songMemo3" value="<?= htmlspecialchars($songMemo3, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="eventRegion" value="<?= htmlspecialchars($eventRegion, ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="eventPrefecture" value="<?= htmlspecialchars($eventPrefecture, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="time_start_hour" value="<?= htmlspecialchars($time_start_hour, ENT_QUOTES) ?>">
       <input type="hidden" name="time_start_min" value="<?= htmlspecialchars($time_start_min, ENT_QUOTES) ?>">
       <input type="hidden" name="time_finish_hour" value="<?= htmlspecialchars($time_finish_hour, ENT_QUOTES) ?>">
       <input type="hidden" name="time_finish_min" value="<?= htmlspecialchars($time_finish_min, ENT_QUOTES) ?>">
       <input type="hidden" name="time_note" value="<?= htmlspecialchars($time_note, ENT_QUOTES) ?>">
-
       <input type="hidden" name="concept" value="<?= htmlspecialchars($concept, ENT_QUOTES) ?>">
       <input type="hidden" name="requirement_memo" value="<?= htmlspecialchars($requirement_memo, ENT_QUOTES) ?>">
-
       <input type="hidden" name="genreSelect" value="<?= htmlspecialchars($genreSelect, ENT_QUOTES, 'UTF-8') ?>">
-
       <input type="hidden" name="other_instrument_name" value="<?= htmlspecialchars($_other_instrument_name ?? '', ENT_QUOTES, 'UTF-8') ?>">
       <input type="hidden" name="other_instrument_count" value="<?= htmlspecialchars($_other_instrument_count ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
