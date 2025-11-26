@@ -7,7 +7,7 @@
 　また、当サービスを制作するにあたり、chatGPTに伴走していただきました。実際に手を動かしてコードを書くことで、インプット中心の学習では身につかなった技術を習得できたと感じ、簡単なエラーの解消や、コードの修正がすらすらとできるようになったことは、自分の自信につながりました。<br>
  　至らないところも多々あるかと思いますが、どうぞよろしくお願いいたします。
 
-<img width="1539" height="1033" alt="Image" src="https://github.com/user-attachments/assets/d8bc24cd-b3b9-4969-85fe-46c27074597e" />
+<img width="1539" height="1033" alt="Image" src="https://github.com/user-attachments/assets/78bf69de-04fe-4964-b319-3e1e03104e08" />
 
 ---
 
@@ -49,13 +49,13 @@
 
 ## 画面サンプル（スクリーンショット）
 **■トップページ（index.php）**
-<img width="1794" height="897" alt="Image" src="https://github.com/user-attachments/assets/7ac3480a-9b57-4419-9c71-77fd0048fcf7" />
+<img width="1794" height="897" alt="Image" src="https://github.com/user-attachments/assets/1e06cada-d27a-49ba-81ce-86de3492f3c6" />
 
 **■開催情報登録フォーム（register.php）**
-<img width="1800" height="900" alt="Image" src="https://github.com/user-attachments/assets/03683f67-413a-48aa-9566-d30daa310a2a" />
+<img width="1800" height="900" alt="Image" src="https://github.com/user-attachments/assets/8b6ac99e-7137-4900-b80d-d71fae3bd0a4" />
 
 **■募集中の演奏会一覧（list.php）**
-<img width="1804" height="902" alt="Image" src="https://github.com/user-attachments/assets/f41885ff-97eb-4980-8a36-a99ea7a985de" />
+<img width="1804" height="902" alt="Image" src="https://github.com/user-attachments/assets/46fa35fd-920b-41f2-9116-8e34e096216b" />
 </p>
 
 ---
