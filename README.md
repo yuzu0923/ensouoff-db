@@ -20,9 +20,8 @@
 ---
 
 ## サービスのURL
-　URL：http://ensouoff-db.upper.jp/<br>
-　ID：ensembleAdmin<br>
-　PASS：ys22115202<br>
+　URL：~~http://ensouoff-db.upper.jp/~~<br>
+　※現在は非公開です
 
 　※ポートフォリオ用のため、外部からアクセスできないようになっています。<br>
 　※下記のルールに従って、ぜひ実際に登録してみてください。演奏会一覧に表示されるようになります。<br>
